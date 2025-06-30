@@ -1,4 +1,4 @@
-import { getPhotographers } from '../components/fetch.js';
+import { getPhotographers } from '../data/fetch.js';
 
 const modal = document.getElementById('contact_modal')
 
@@ -22,6 +22,7 @@ async function displayModal() {
 
 function closeModal() {
     modal.style.display = "none";
+    modal.setAttribute('aria-label', 'Close contact form');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,11 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const prenom = document.getElementById('prenom').value;
         const nom = document.getElementById('nom').value;
         const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
         // Affiche dans la console
         console.log("Prénom :", prenom);
         console.log("Nom :", nom);
         console.log("Email :", email);
+        console.log("Message :", message);
     });
 
     const nameSpan = document.getElementById('photographer-name');
