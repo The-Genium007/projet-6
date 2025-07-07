@@ -67,6 +67,7 @@
     font-weight: 700;
 }
 
+
 #sort-select{
     font-size: 18px;
     font-weight: 500;
@@ -74,10 +75,42 @@
     background: #901C1C;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
+    width: 170px;
 }
 
+#sort-select::picker(select) {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background: #901C1C;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 170px;
+    padding: 0 15px;
+    top: anchor(bottom);
+}
+
+#sort-select option {
+    padding: 10px 0;
+    border-bottom: solid #fff 1px ;
+}
+
+#sort-select option:last-child {
+    border-bottom: none;
+}
+
+/* Passage du look system a navigateur <3 Grafikart */
+select,
+select::picker(select) {
+    appearance: base-select;
+}
+
+option::checkmark {
+   display: none;
+}
 
 .contact_button {
     font-size: 20px;
@@ -157,15 +190,16 @@
 .gallery {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 100px;
-    margin: 50px 0;
+    gap: 50px;
+    margin: 50px 100px;
 }
 
 .media-item {
     width: 350px;
     height: 350px;
+    text-decoration: none;
 }
 
 .media-item img {
